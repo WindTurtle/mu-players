@@ -1,0 +1,4 @@
+$default-spacing: 10px;
+@function spacing($num) {
+  @return $num * $default-spacing;
+}

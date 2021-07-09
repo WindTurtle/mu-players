@@ -1,0 +1,157 @@
+.list-player {
+  padding: spacing(2) spacing(10);
+  margin-top: spacing(10);
+  @include s-xs {
+    padding: spacing(2) spacing(2);
+  }
+  @include xs {
+    padding: spacing(2) spacing(2);
+  }
+  @include sm {
+    padding: spacing(2) spacing(3);
+  }
+  @include md {
+    padding: spacing(2) spacing(5);
+  }
+
+  .list-player-title {
+    margin-bottom: spacing(1);
+    .title,
+    i {
+      font-size: 35px;
+      color: var(--color-text);
+    }
+  }
+  .add-container {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    background: var(--color-headings);
+    right: 1%;
+    bottom: 2%;
+    cursor: pointer;
+    box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
+      0 3px 1px 0 rgba(20, 23, 28, 0.1);
+    transition: linear 0.3s;
+    i{
+      color: var(--color-light);
+    }
+    &:hover {
+      box-shadow: 0 2px 8px 2px var(--color-shadow);
+    }
+  }
+  #listPlayerContent {
+    background-color: var(--bg-panel);
+    padding: spacing(2);
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    border-radius: 10px;
+    @include s-xs {
+      grid-template-columns: auto;
+    }
+    @include xs {
+      grid-template-columns: auto auto;
+    }
+    @include sm {
+      grid-template-columns: auto auto;
+    }
+    @include md {
+      grid-template-columns: auto auto auto;
+    }
+    @include lg {
+      grid-template-columns: auto auto auto auto;
+    }
+    @include xl {
+      grid-template-columns: auto auto auto auto auto auto;
+    }
+    .card-item {
+      box-shadow: 0px 0 0px 0px var(--color-shadow);
+      border-radius: 60px 60px 40px 40px;
+      transition: linear 0.2s;
+      padding: spacing(2);
+      min-width: 30%;
+      cursor: pointer;
+      @include s-xs {
+        margin-bottom: spacing(1);
+      }
+      @include xs {
+        padding: spacing(1);
+        margin: spacing(1);
+      }
+      @include sm {
+        padding: spacing(1);
+      }
+      @include md {
+        padding: spacing(1);
+      }
+      @include lg {
+        padding: spacing(1);
+      }
+      @include xl {
+        padding: spacing(1);
+      }
+      &:hover {
+        box-shadow: 0px -2px 8px 3px var(--color-shadow);
+        background: var(--bg);
+        background: linear-gradient(
+          45deg,
+          var(--color-headings),
+          var(--color-title)
+        );
+      }
+      &:hover .item-text .name,
+      &:hover .item-text .title--ovr,
+      &:hover .item-text .title--sta {
+        color: var(--color-light);
+      }
+      .item-img {
+        text-align: center;
+        img {
+          width: 128px;
+          height: 128px;
+          border-radius: 10px 10px 0 0;
+          @include xs {
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+      .item-text {
+        text-align: center;
+        .name {
+          padding: spacing(1);
+          color: var(--color-text);
+        }
+        .position {
+          font-weight: bold;
+          padding-bottom: spacing(1);
+          color: var(--color-text);
+        }
+        .nation {
+          img {
+            border-radius: 3px;
+          }
+        }
+        .title--ovr {
+          font-weight: bold;
+          color: var(--color-title);
+          //   border-right: 1px solid #333;
+          padding-right: spacing(0.5);
+        }
+        .title--sta {
+          font-weight: bold;
+          color: var(--color-headings);
+        }
+        .stars {
+          i {
+            margin-right: spacing(0.2);
+            color: var(--color-stars);
+          }
+        }
+      }
+    }
+  }
+}

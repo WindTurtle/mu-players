@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manchester United</title>
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.css">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <header>
+        <div class="slider-bar">
+            <div class="header-brand">
+                <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/a/a1/Man_Utd_FC_.svg/1200px-Man_Utd_FC_.svg.png"
+                    alt="" width="50px" height="50px">
+            </div>
+            <ul class="slider-list">
+                <li class="slider-list-item">
+                    <a href="#">
+                        MATCH
+                    </a>
+                </li>
+                <li class="slider-list-item">
+                    <a href="#">
+                        WATCH NOW
+                    </a>
+                </li>
+                <li class="slider-list-item">
+                    <a href="#">
+                        TEST
+                    </a>
+                </li>
+            </ul>
+            <button class="slider-btn">
+                <span></span>
+            </button>
+        </div>
+
+        <div class="toggle-container">
+            <input type="checkbox" id="switch" name="theme" />
+            <label for="switch">Toggle</label>
+        </div>
+
+    </header>
+    <section class="list-player">
+        <div class="list-player-title">
+            <i class="fa fa-user-alt"></i>
+            <span class="title">Players</span>
+        </div>
+        <div class="add-container" id="myBtn">
+            <i class="fa fa-plus"></i>
+        </div>
+        <div id="listPlayerContent">
+        </div>
+    </section>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="close" class="close">&times;</span>
+                <h2>Add Player</h2>
+            </div>
+            <div class="modal-body">
+                <div class="body-form">
+                    <input id="txtID" type="text" placeholder="Id player...">
+                    <input id="txtName" type="text" placeholder="Name...">
+                    <input id="txtAvatar" type="text" placeholder="Avatar...">
+                    <input id="txtOvr" type="text" placeholder="OVR...">
+                    <input id="txtStamina" type="text" placeholder="Stamina...">
+                    <input id="txtNation" type="text" placeholder="Nation...">
+                    <input id="txtPosition" type="text" placeholder="Position...">
+                    <input id="txtRating" type="text" placeholder="Rating...">
+                    <button id="addBtn" class="add-btn" onclick="addPlayer()">Add Player</button>
+                </div>
+                <div class="body-img">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <h3>Development by Anh Phong</h3>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+    <script>
+        var checkbox = document.querySelector('input[name=theme]');
+
+        checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                trans();
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                trans();
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        });
+        let trans = () => {
+            document.documentElement.classList.add('transition');
+            window.setTimeout(() => {
+                document.documentElement.classList.remove('transition');
+            }, 1000);
+        }
+
+        $(document).ready(function () {
+            $('.slider-btn').click(function () {
+                $('.slider-bar').toggleClass('active');
+                $('.slider-btn').toggleClass('toggle');
+            })
+        })
+
+        // OPEN MODAL
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="./modals/player.js"></script>
+    <script src="./controllers/PlayerController.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 11111;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  .modal-content {
+    position: relative;
+    background-color: var(--bg);
+    margin: spacing(5) auto;
+    padding: 0;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 10px 10px 10px 10px;
+    .close {
+      color: var(--color-text);
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      &:hover,
+      &:focus {
+        color: var(--color-text);
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+  .modal-header {
+    padding: 2px 16px;
+    background: linear-gradient(
+      45deg,
+      var(--color-headings),
+      var(--color-title)
+    );
+    color: var(--color-light);
+    border-radius: 10px 10px 0 0;
+  }
+
+  .modal-body {
+    padding: spacing(1) spacing(0.5);
+    display: flex;
+    justify-content: space-between;
+    .body-form {
+      margin-right: spacing(1);
+      width: 50%;
+      input {
+        width: 290px;
+        display: block;
+        padding: spacing(1) spacing(1);
+        margin-bottom: spacing(1);
+        border-radius: 5px;
+        border: 1px solid #444;
+        outline: none;
+        // box-shadow: 2px 2px 2px 2px var(--color-headings);
+        &:focus {
+          box-shadow: 2px 2px 2px 2px var(--color-headings);
+        }
+      }
+      .add-btn{
+        padding: spacing(0.7) spacing(1);
+        background-color: var(--color-headings);
+        border: 1px solid var(--color-headings);
+        color: var(--color-light);
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: .3s;
+        min-width: 100%;
+        &:hover{
+          background-color: var(--color-headings-hover);
+          border: 1px solid var(--color-headings-hover);
+        }
+      }
+    }
+    .body-img {
+      border-radius: 10px;
+      min-width: 54%;
+      background: var(--bg-url);
+      background-position: contain;
+      background-size: cover;
+      padding: 0 spacing(5);
+    }
+  }
+
+  .modal-footer {
+    padding: 2px 16px;
+    background: linear-gradient(
+      45deg,
+      var(--color-headings),
+      var(--color-title)
+    );
+    color: var(--color-light);
+    border-radius: 0 0 10px 10px;
+    font-size: 10px;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}

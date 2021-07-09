@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+
+html {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  --bg: #fcfcfc;
+  --bg-panel: #ebebeb;
+  --color-headings: #0077ff;
+  --color-headings-hover: #ec2020;
+  --color-text: #333333;
+  --color-title: #dd5454;
+  --color-checkbox: #13df3f;
+  --color-stars: #9c8d00;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-light: #ffffff;
+  --bg-url: url("https://media.thethao247.vn/resize_700x400/upload/vuongnh/2017/01/25/mu-nang-cap-san-old-trafford-sap-khung-hon-ca-bernabeu1485336420.jpg");
+}
+
+:root[data-theme="dark"] {
+  --bg: #333333;
+  --bg-panel: #434343;
+  --color-headings: #ec2020;
+  --color-headings-hover: #0077ff;
+  --color-text: #b5b5b5;
+  --color-title: #0077ff;
+  --color-stars: #f5f24f;
+  --color-shadow: rgba(255, 255, 255, 0.3);
+  --bg-url: url("https://sukienthethao24h.files.wordpress.com/2013/04/old_trafford_2.jpg");
+}
+html.transition,
+html.transition *,
+html.transition *::before,
+html.transition *::after {
+  transition: all 700ms !important;
+  transition-delay: 0 !important;
+}
